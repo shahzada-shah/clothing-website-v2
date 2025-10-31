@@ -1,0 +1,7 @@
+# Hide internal docs and tooling from release/source exports and language stats
+/.bolt export-ignore
+ARCHITECTURE.md export-ignore linguist-documentation
+PROJECT_STRUCTURE.md export-ignore linguist-documentation
+ROUTING_GUIDE.md export-ignore linguist-documentation
+
+
