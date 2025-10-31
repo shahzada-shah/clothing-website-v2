@@ -14,7 +14,7 @@
 import React, { useState, useMemo } from 'react';
 import { FadeInSection, MultiSelect } from '../components/ui';
 import { AnimatedProductGrid } from '../components/products/AnimatedProductGrid';
-import { WOMEN_PRODUCTS } from '../constants/products';
+import { products } from '../constants/products';
 import { Product } from '../types/product';
 
 /**
@@ -31,7 +31,7 @@ export const WomenPage: React.FC = () => {
 
   // Filter products based on selected filters
   const filteredProducts = useMemo(() => {
-    return WOMEN_PRODUCTS.filter((product: Product) => {
+    return products.filter((product: Product) => {
       // Type filter (multi-select)
       if (!typeFilters.includes('All') && typeFilters.length > 0) {
         if (!typeFilters.includes(product.type)) {
@@ -78,11 +78,11 @@ export const WomenPage: React.FC = () => {
         <div className="bg-white py-16 px-6 border-b border-gray-200">
           <div className="max-w-[1400px] mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Women's Collection
+              Handcrafted Eyewear Collection
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl">
-              Explore our women's collection featuring timeless pieces and modern essentials.
-              Effortless style for every occasion.
+              Explore our handcrafted eyewear collection featuring timeless designs and modern frames.
+              Sophisticated style for every occasion.
             </p>
           </div>
         </div>
@@ -95,7 +95,7 @@ export const WomenPage: React.FC = () => {
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
               <MultiSelect
                 label="Type"
-                options={['All', 'Tops', 'Bottoms', 'Dresses', 'Jackets', 'Accessories']}
+                options={['All', 'Eyeglasses', 'Sunglasses']}
                 values={typeFilters}
                 onChange={setTypeFilters}
               />
@@ -109,21 +109,21 @@ export const WomenPage: React.FC = () => {
 
               <MultiSelect
                 label="Material"
-                options={['All', 'Cotton', 'Silk', 'Linen', 'Wool', 'Synthetic']}
+                options={['All', 'Cellulose Acetate', 'Titanium', 'Stainless Steel']}
                 values={materialFilters}
                 onChange={setMaterialFilters}
               />
 
               <MultiSelect
                 label="Size"
-                options={['All', 'XXS', 'XS', 'S', 'M', 'L', 'XL']}
+                options={['All', '50mm', '52mm', '54mm', '56mm', '58mm']}
                 values={sizeFilters}
                 onChange={setSizeFilters}
               />
 
               <MultiSelect
                 label="Color"
-                options={['All', 'Black', 'White', 'Beige', 'Navy', 'Cream', 'Blush']}
+                options={['All', 'Black', 'Tortoise', 'Amber', 'Gold', 'Silver', 'Gunmetal', 'Navy']}
                 values={colorFilters}
                 onChange={setColorFilters}
               />

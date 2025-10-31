@@ -25,6 +25,8 @@ interface ProductImageProps {
   color: string;
   /** Whether this is the main large image (true) or thumbnail (false) */
   isMain?: boolean;
+  /** Optional real image source to display (used for main image when provided) */
+  imageSrc?: string;
 }
 
 /**
@@ -35,7 +37,8 @@ interface ProductImageProps {
  */
 export const ProductImage: React.FC<ProductImageProps> = ({
   color,
-  isMain = false
+  isMain = false,
+  imageSrc
 }) => {
   return (
     <div className={`relative bg-gray-100 rounded-lg overflow-hidden group ${
@@ -45,15 +48,25 @@ export const ProductImage: React.FC<ProductImageProps> = ({
         <div className="relative w-full h-full flex items-center justify-center">
           {isMain ? (
             /* Main Product Mockup - Matches ProductCard style */
-            <div className="relative w-2/3 h-4/5">
-              <div
-                className="w-full h-full rounded-lg transition-all duration-700 ease-in-out group-hover:scale-105"
-                style={{ backgroundColor: color }}
-              >
-                {/* Subtle gradient overlay for depth */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-black/5 rounded-lg" />
+            imageSrc ? (
+              <img
+                src={imageSrc}
+                alt="Product"
+                className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                loading="eager"
+                decoding="async"
+              />
+            ) : (
+              <div className="relative w-2/3 h-4/5">
+                <div
+                  className="w-full h-full rounded-lg transition-all duration-700 ease-in-out group-hover:scale-105"
+                  style={{ backgroundColor: color }}
+                >
+                  {/* Subtle gradient overlay for depth */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-black/5 rounded-lg" />
+                </div>
               </div>
-            </div>
+            )
           ) : (
             /* Thumbnail Mockup */
             <div

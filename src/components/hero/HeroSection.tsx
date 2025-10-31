@@ -12,9 +12,7 @@
  */
 
 import React from 'react';
-import { Image } from 'lucide-react';
 import { HERO_CONTENT } from '../../constants/content';
-import { AnimatedButton } from '../ui/AnimatedButton';
 
 export const HeroSection: React.FC = () => {
   const [isLoaded, setIsLoaded] = React.useState(false);
@@ -26,27 +24,34 @@ export const HeroSection: React.FC = () => {
 
   return (
     <section className="relative w-full h-[calc(100vh-73px)] min-h-[600px] overflow-hidden">
-      {/* Background with Wireframe Placeholder */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-        {/* Wireframe Image Placeholder */}
-        <div
-          className={`w-full max-w-2xl mx-auto border-2 border-dashed border-gray-400 rounded-lg p-16 flex flex-col items-center justify-center transition-all duration-1000 ${
-            isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-          }`}
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img
+          src="/images/hero_img.png"
+          alt="Hero Background"
+          className="w-full h-full object-cover"
+        />
+        
+        {/* Edge Blur Effect - Only on far left and right edges */}
+        <div 
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            maskImage: 'linear-gradient(to right, black 0%, black 15%, transparent 25%, transparent 75%, black 85%, black 100%)',
+            WebkitMaskImage: 'linear-gradient(to right, black 0%, black 15%, transparent 25%, transparent 75%, black 85%, black 100%)',
+          }}
         >
-          <div className="relative">
-            <Image
-              className="w-24 h-24 text-gray-400 mb-4 animate-pulse"
-              strokeWidth={1.5}
-            />
-            <div className="absolute inset-0 w-24 h-24 bg-gray-400/10 rounded-full blur-xl animate-pulse" />
-          </div>
-          <p className="text-gray-500 text-lg font-medium tracking-wide">WIREFRAME IMAGE</p>
-          <p className="text-gray-400 text-sm mt-2 font-mono">720 × 980</p>
+          <img
+            src="/images/hero_img.png"
+            alt=""
+            className="w-full h-full object-cover blur-md"
+          />
         </div>
-
-        {/* Subtle animated overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/5 to-transparent" />
+        
+        {/* Edge Darkening - Left and Right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40" />
+        
+        {/* Subtle center darkening for text readability */}
+        <div className="absolute inset-0 bg-black/10" />
       </div>
 
       {/* Content */}
@@ -54,7 +59,7 @@ export const HeroSection: React.FC = () => {
         <div className="max-w-4xl text-center">
           {/* Main Headline */}
           <h1
-            className={`text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-gray-900 mb-6 leading-tight transition-all duration-1000 delay-200 ${
+            className={`text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-white mb-6 leading-tight transition-all duration-1000 delay-200 drop-shadow-lg ${
               isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
@@ -76,7 +81,7 @@ export const HeroSection: React.FC = () => {
 
           {/* Subtitle */}
           <p
-            className={`text-base sm:text-lg md:text-xl text-gray-800 mb-2 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-500 ${
+            className={`text-base sm:text-lg md:text-xl text-white mb-2 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-500 drop-shadow-md ${
               isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
@@ -85,7 +90,7 @@ export const HeroSection: React.FC = () => {
 
           {/* Description */}
           <p
-            className={`text-base sm:text-lg md:text-xl text-gray-800 mb-10 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-700 ${
+            className={`text-base sm:text-lg md:text-xl text-white mb-10 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-700 drop-shadow-md ${
               isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
@@ -98,9 +103,12 @@ export const HeroSection: React.FC = () => {
               isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            <AnimatedButton href={HERO_CONTENT.ctaLink}>
+            <a
+              href={HERO_CONTENT.ctaLink}
+              className="inline-block bg-white text-gray-900 px-8 py-3 text-sm font-medium tracking-wide transition-all duration-500 hover:bg-gray-900 hover:text-white hover:translate-y-[-2px] hover:shadow-xl"
+            >
               {HERO_CONTENT.ctaText}
-            </AnimatedButton>
+            </a>
           </div>
         </div>
       </div>

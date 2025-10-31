@@ -39,6 +39,7 @@ import {
   ProductFeatures,
   ExpandableSection
 } from '../components/product-detail';
+import { useToast } from '../components/ui';
 import { useCart } from '../contexts/CartContext';
 import { useFavorites } from '../contexts/FavoritesContext';
 
@@ -52,10 +53,11 @@ export const ProductDetailPage: React.FC = () => {
   const navigate = useNavigate();
   const { addToCart } = useCart();
   const { isFavorite, toggleFavorite } = useFavorites();
+  const { showToast } = useToast();
 
   // State management
   const [selectedColorIndex, setSelectedColorIndex] = useState(0);
-  const [selectedSize, setSelectedSize] = useState('M');
+  const [selectedSize, setSelectedSize] = useState('52mm');
   const [quantity, setQuantity] = useState(1);
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
 
@@ -87,8 +89,10 @@ export const ProductDetailPage: React.FC = () => {
     { name: 'Burgundy', hex: '#800020' },
   ];
 
-  // Available sizes
-  const sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
+  // Available sizes (eyewear mm sizing)
+  const sizes = (product?.availableSizes && product.availableSizes.length > 0)
+    ? product.availableSizes
+    : ['50mm', '52mm', '54mm', '56mm', '58mm'];
 
   // Product image IDs for thumbnails
   const thumbnailIds = [1, 2, 3, 4];
@@ -114,11 +118,16 @@ export const ProductDetailPage: React.FC = () => {
       size: selectedSize,
       quantity: quantity,
     });
+
+    showToast({
+      type: 'success',
+      message: 'Added to bag',
+      description: `${product.name} · ${selectedSize} · ${colorOptions[selectedColorIndex].name}`
+    });
   };
 
   const handleBuyNow = () => {
-    // In a real app, this would go directly to checkout
-    alert('Proceeding to checkout...');
+    showToast({ type: 'info', message: 'Proceeding to checkout…', description: 'Secure checkout opens next' });
   };
 
   const handleShare = () => {
@@ -150,6 +159,7 @@ export const ProductDetailPage: React.FC = () => {
             <ProductImage
               color={colorOptions[selectedColorIndex].hex}
               isMain={true}
+              imageSrc={product.image}
             />
 
             {/* Thumbnail Images */}
@@ -243,11 +253,11 @@ export const ProductDetailPage: React.FC = () => {
                 isExpanded={expandedSection === 'materials'}
                 onToggle={() => toggleSection('materials')}
               >
-                <p>• 100% Premium Cotton</p>
-                <p>• Machine wash cold</p>
-                <p>• Tumble dry low</p>
-                <p>• Do not bleach</p>
-                <p>• Iron on low heat if needed</p>
+                <p>• Material: {product.material || 'Cellulose Acetate / Titanium'}</p>
+                <p>• Clean lenses with microfiber cloth only</p>
+                <p>• Avoid alcohol-based cleaners and hot water</p>
+                <p>• Store in protective case when not in use</p>
+                <p>• Adjustments should be made by a professional optician</p>
               </ExpandableSection>
 
               <ExpandableSection
@@ -269,9 +279,12 @@ export const ProductDetailPage: React.FC = () => {
                 <p>SKU: {product.id.toString().padStart(6, '0')}</p>
                 <p>Category: {product.category}</p>
                 <p>Collection: {product.collection}</p>
-                <p>Available Colors: {product.colors}</p>
-                <p>Designed for everyday wear</p>
-                <p>Made with sustainable materials</p>
+                {product.type && <p>Type: {product.type}</p>}
+                {product.material && <p>Material: {product.material}</p>}
+                {product.details?.frame && <p>Frame: {product.details.frame}</p>}
+                {product.details?.lens && <p>Lens: {product.details.lens}</p>}
+                {product.availableSizes && <p>Available Sizes: {product.availableSizes.join(', ')}</p>}
+                {product.availableColors && <p>Available Colors: {product.availableColors.join(', ')}</p>}
               </ExpandableSection>
             </div>
           </div>

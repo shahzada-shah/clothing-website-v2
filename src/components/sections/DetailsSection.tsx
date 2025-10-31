@@ -15,9 +15,9 @@ import { BRAND_NAME } from '../../constants/content';
 
 export const DetailsSection: React.FC = () => {
   const images = [
-    { id: 1, label: 'BUTTON DETAIL', aspectRatio: '4/3' },
-    { id: 2, label: 'STITCHING DETAIL', aspectRatio: '4/3' },
-    { id: 3, label: 'ZIPPER DETAIL', aspectRatio: '4/3' },
+    { id: 1, label: 'CRAFTSMANSHIP', aspectRatio: '4/3', image: '/images/hand_craft_01.png' },
+    { id: 2, label: 'PRECISION DETAIL', aspectRatio: '4/3', image: '/images/hand_craft_02.png' },
+    { id: 3, label: 'ARTISAN WORK', aspectRatio: '4/3', image: '/images/hand_craft_03.png' },
   ];
 
   return (
@@ -31,21 +31,39 @@ export const DetailsSection: React.FC = () => {
                 className="relative bg-gray-100 overflow-hidden group cursor-pointer"
                 style={{ aspectRatio: image.aspectRatio }}
               >
-                {/* Wireframe Placeholder */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="flex flex-col items-center justify-center">
-                    <Image
-                      className="w-12 h-12 text-gray-300 transition-all duration-500 group-hover:scale-110 group-hover:text-gray-400"
-                      strokeWidth={1.5}
+                {image.image ? (
+                  <>
+                    {/* Detail Image */}
+                    <img
+                      src={image.image}
+                      alt={image.label}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <p className="text-gray-400 text-xs mt-3 font-medium tracking-wide">
-                      {image.label}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    {/* Dark Hover Overlay with Label */}
+                    <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center">
+                      <p className="text-white text-xs font-medium tracking-widest uppercase">
+                        {image.label}
+                      </p>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    {/* Wireframe Placeholder */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="flex flex-col items-center justify-center">
+                        <Image
+                          className="w-12 h-12 text-gray-300 transition-all duration-500 group-hover:scale-110 group-hover:text-gray-400"
+                          strokeWidth={1.5}
+                        />
+                        <p className="text-gray-400 text-xs mt-3 font-medium tracking-wide">
+                          {image.label}
+                        </p>
+                      </div>
+                    </div>
+                    {/* Hover Overlay */}
+                    <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </>
+                )}
               </div>
             </FadeInSection>
           ))}
@@ -63,8 +81,8 @@ export const DetailsSection: React.FC = () => {
           {/* Right: Description */}
           <FadeInSection delay={800} direction="left">
             <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-              From stitching to fabric, every piece of {BRAND_NAME} is crafted with precision.
-              Quality you can feel, design that lasts made to be worn every day, everywhere.
+              From frame to lens, every piece of {BRAND_NAME} eyewear is handcrafted with precision.
+              Quality you can see, design that endures—made to be worn every day, everywhere.
             </p>
           </FadeInSection>
         </div>

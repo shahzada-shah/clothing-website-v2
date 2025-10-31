@@ -30,7 +30,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/layout/Layout';
 import { HomePage, MenPage, WomenPage, AboutPage, AuthPage, ProductDetailPage } from './pages';
-import { PageLoader, ScrollToTopOnMount } from './components/ui';
+import { PageLoader, ScrollToTopOnMount, ToastProvider } from './components/ui';
 import { usePageLoader } from './hooks';
 import { CartProvider } from './contexts/CartContext';
 import { FavoritesProvider } from './contexts/FavoritesContext';
@@ -45,12 +45,13 @@ const App: React.FC = () => {
   const isLoading = usePageLoader(1000);
 
   return (
-    <DropdownProvider>
-      <CartProvider>
-        <FavoritesProvider>
+    <ToastProvider>
+      <DropdownProvider>
+        <CartProvider>
+          <FavoritesProvider>
           <PageLoader isLoading={isLoading} />
           <div
-            className="transition-all"
+            className="transition-all w-full"
             style={{
               filter: isLoading ? 'blur(20px)' : 'blur(0px)',
               transitionDuration: '1800ms',
@@ -75,6 +76,7 @@ const App: React.FC = () => {
         </FavoritesProvider>
       </CartProvider>
     </DropdownProvider>
+    </ToastProvider>
   );
 };
 

@@ -15,4 +15,4 @@ export const HERO_CONTENT: HeroContent = {
   ctaLink: '#shop',
 };
 
-export const BRAND_NAME = 'KAZWEAR.';
+export const BRAND_NAME = 'KAZWEAR';

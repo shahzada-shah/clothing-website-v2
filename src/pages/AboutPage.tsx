@@ -18,23 +18,23 @@ import { ArrowRight, Minus } from 'lucide-react';
 const PRINCIPLES = [
   {
     number: '01',
-    title: 'Craft',
-    description: 'Every piece begins with intention. We collaborate with artisans who share our commitment to excellence, ensuring each garment meets exacting standards.',
+    title: 'Craftsmanship',
+    description: 'Every frame is handcrafted by master artisans in Japan, where decades of experience meet precision engineering. Each pair undergoes meticulous quality control to ensure flawless construction.',
   },
   {
     number: '02',
-    title: 'Sustainability',
-    description: 'Responsible design is non-negotiable. We source materials thoughtfully and maintain transparent supply chains that respect both people and planet.',
+    title: 'Materials',
+    description: 'We source only the finest cellulose acetate, titanium, and stainless steel. Our materials are chosen for their durability, comfort, and ability to showcase intricate hand-polished finishes.',
   },
   {
     number: '03',
-    title: 'Longevity',
-    description: 'Fashion without expiration. Our designs resist the pull of trends, focusing instead on proportions, materials, and construction that endure.',
+    title: 'Timeless Design',
+    description: 'Our frames transcend fleeting trends. Each design is a study in balance and proportion, created to remain elegant and relevant for generations.',
   },
   {
     number: '04',
-    title: 'Versatility',
-    description: 'From morning to midnight, work to weekend. Each piece is engineered for the complexity of modern life, moving seamlessly between moments.',
+    title: 'Vision',
+    description: 'We believe eyewear is more than function—it\'s an extension of identity. Every frame is designed to enhance how you see the world and how the world sees you.',
   },
 ];
 
@@ -67,13 +67,13 @@ export const AboutPage: React.FC = () => {
                 </span>
               </div>
               <h1 className="text-5xl md:text-7xl font-light text-gray-900 mb-8 tracking-tight leading-[1.1]">
-                Designed for
+                Crafted for
                 <br />
-                <span className="font-normal">everyday life</span>
+                <span className="font-normal">timeless vision</span>
               </h1>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed font-light">
-                We create essential clothing that bridges the gap between comfort and refinement,
-                built to last beyond seasons.
+                We create handcrafted eyewear that bridges artistry and precision engineering,
+                designed to elevate how you see and are seen.
               </p>
             </div>
           </div>
@@ -94,18 +94,19 @@ export const AboutPage: React.FC = () => {
               </div>
               <div className="space-y-6 text-gray-600 leading-relaxed font-light">
                 <p className="text-lg">
-                  In an industry driven by constant change, we've chosen a different path.
-                  One that values permanence over novelty, substance over spectacle.
+                  In a world of mass production, we've chosen the path of the artisan.
+                  One that values precision over speed, heritage over convenience.
                 </p>
                 <p>
-                  Each collection is a careful study in balance—between structure and ease,
-                  simplicity and depth, tradition and innovation. We don't chase trends;
-                  we create pieces that exist outside of time.
+                  Each frame is a careful study in geometry—balancing structure and comfort,
+                  classic silhouettes and contemporary refinement. Drawing from Japanese
+                  craftsmanship traditions, we create eyewear that transcends time.
                 </p>
                 <p>
-                  This approach demands patience. It requires us to question every detail,
-                  to refine endlessly, to say no more often than yes. But the result is
-                  clothing that feels both familiar and fresh, season after season.
+                  This approach demands dedication. Every angle, every curve, every finish is
+                  considered and reconsidered. Frames are hand-polished, individually inspected,
+                  and crafted with patience. The result is eyewear that feels essential from
+                  the moment you wear it.
                 </p>
               </div>
             </div>
@@ -113,17 +114,30 @@ export const AboutPage: React.FC = () => {
             {/* Right Column - Visual Element */}
             <div className="space-y-8">
               <div className="aspect-[4/5] bg-stone-50 rounded-sm relative overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-br from-stone-100 via-stone-50 to-stone-100 transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-1/2 h-2/3 bg-stone-200 rounded-sm transition-all duration-700 group-hover:scale-95 opacity-40" />
-                </div>
+                <img
+                  src="/images/showcase_01.png"
+                  alt="Eyewear Craftsmanship"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
               </div>
               <div className="flex gap-4">
                 <div className="flex-1 aspect-square bg-stone-50 rounded-sm relative overflow-hidden group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-stone-50 to-stone-100 transition-transform duration-700 group-hover:scale-105" />
+                  <img
+                    src="/images/showcase_02.png"
+                    alt="Design details"
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
                 </div>
                 <div className="flex-1 aspect-square bg-stone-50 rounded-sm relative overflow-hidden group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-stone-100 to-stone-50 transition-transform duration-700 group-hover:scale-105" />
+                  <img
+                    src="/images/showcase_03.png"
+                    alt="Material finishing"
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
                 </div>
               </div>
             </div>
@@ -178,36 +192,36 @@ export const AboutPage: React.FC = () => {
               <div className="border-t border-gray-200 pt-8">
                 <div className="flex items-start justify-between gap-8">
                   <h3 className="text-xl font-light text-gray-900 w-48 flex-shrink-0">
-                    Material Selection
+                    Frame Design
                   </h3>
                   <p className="text-gray-600 leading-relaxed font-light flex-1">
-                    We source natural fibers from certified suppliers, prioritizing organic cotton,
-                    European linen, and ethically produced wool. Each material is chosen for its
-                    quality, durability, and minimal environmental impact.
+                    Our designers begin with hand-drawn sketches, translating vision into precise technical
+                    specifications. Each design undergoes multiple iterations, refining proportions and angles
+                    until achieving perfect harmony between form and function.
                   </p>
                 </div>
               </div>
               <div className="border-t border-gray-200 pt-8">
                 <div className="flex items-start justify-between gap-8">
                   <h3 className="text-xl font-light text-gray-900 w-48 flex-shrink-0">
-                    Design Process
+                    Handcrafting
                   </h3>
                   <p className="text-gray-600 leading-relaxed font-light flex-1">
-                    Our design team iterates extensively, refining patterns and proportions through
-                    multiple prototypes. We test each garment in real-world conditions, ensuring
-                    comfort and functionality match our aesthetic standards.
+                    Master craftsmen shape premium acetate and metal through traditional techniques passed down
+                    through generations. Each frame is hand-polished, ensuring smooth edges and flawless finishes.
+                    Hinges are individually adjusted for perfect temple movement.
                   </p>
                 </div>
               </div>
               <div className="border-t border-gray-200 pt-8">
                 <div className="flex items-start justify-between gap-8">
                   <h3 className="text-xl font-light text-gray-900 w-48 flex-shrink-0">
-                    Production
+                    Quality Control
                   </h3>
                   <p className="text-gray-600 leading-relaxed font-light flex-1">
-                    We partner with family-owned factories that share our commitment to fair labor
-                    practices. Small-batch production allows us to maintain quality control and
-                    minimize waste while supporting traditional craftsmanship.
+                    Every frame undergoes rigorous inspection at multiple stages. We test for structural integrity,
+                    comfort, and aesthetic perfection. Only frames that meet our exacting standards bear the
+                    KAZWEAR name—a commitment to excellence in every detail.
                   </p>
                 </div>
               </div>
@@ -222,25 +236,25 @@ export const AboutPage: React.FC = () => {
           <div className="max-w-[1400px] mx-auto px-6 py-32">
             <div className="max-w-3xl">
               <h2 className="text-5xl font-light text-gray-900 mb-8 tracking-tight leading-[1.2]">
-                Explore the collection
+                Discover our collections
               </h2>
               <p className="text-lg text-gray-600 mb-12 leading-relaxed font-light">
-                Discover pieces designed to work together, creating a wardrobe
-                that's both intentional and effortless.
+                Explore frames crafted to enhance your vision and express your style,
+                from classic heritage designs to bold contemporary statements.
               </p>
               <div className="flex flex-wrap gap-4">
                 <button
                   onClick={() => navigate('/women')}
                   className="group inline-flex items-center gap-3 px-8 py-4 bg-gray-900 text-white rounded-sm hover:bg-gray-800 transition-all duration-300"
                 >
-                  <span className="font-light tracking-wide">Women's Collection</span>
+                  <span className="font-light tracking-wide">Premium Collection</span>
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </button>
                 <button
                   onClick={() => navigate('/men')}
                   className="group inline-flex items-center gap-3 px-8 py-4 border border-gray-900 text-gray-900 rounded-sm hover:bg-gray-900 hover:text-white transition-all duration-300"
                 >
-                  <span className="font-light tracking-wide">Men's Collection</span>
+                  <span className="font-light tracking-wide">Heritage Collection</span>
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </button>
               </div>

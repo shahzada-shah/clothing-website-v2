@@ -4,11 +4,11 @@
  * Type definitions for product-related data structures.
  */
 
-export type ProductCategory = 'Jacket' | 'T-Shirt' | 'Pants' | 'Shoes';
-export type ProductType = 'T-Shirts' | 'Shirts' | 'Pants' | 'Jackets' | 'Accessories' | 'Tops' | 'Bottoms' | 'Dresses';
-export type ProductMaterial = 'Cotton' | 'Linen' | 'Wool' | 'Denim' | 'Synthetic' | 'Silk' | 'Leather' | 'Cashmere';
-export type ProductSize = 'XXS' | 'XS' | 'S' | 'M' | 'L' | 'XL' | 'XXL';
-export type ProductColor = 'Black' | 'White' | 'Navy' | 'Gray' | 'Beige' | 'Brown' | 'Cream' | 'Blush';
+export type ProductCategory = 'Jacket' | 'T-Shirt' | 'Pants' | 'Shoes' | 'Eyewear' | 'Sunglasses' | 'Accessories';
+export type ProductType = 'T-Shirts' | 'Shirts' | 'Pants' | 'Jackets' | 'Accessories' | 'Tops' | 'Bottoms' | 'Dresses' | 'Eyeglasses' | 'Sunglasses';
+export type ProductMaterial = 'Cotton' | 'Linen' | 'Wool' | 'Denim' | 'Synthetic' | 'Silk' | 'Leather' | 'Cashmere' | 'Acetate' | 'Titanium' | 'Stainless Steel' | 'Zyl' | 'Cellulose Acetate' | 'Horn';
+export type ProductSize = 'XXS' | 'XS' | 'S' | 'M' | 'L' | 'XL' | 'XXL' | '48mm' | '50mm' | '52mm' | '54mm' | '56mm' | '58mm';
+export type ProductColor = 'Black' | 'White' | 'Navy' | 'Gray' | 'Beige' | 'Brown' | 'Cream' | 'Blush' | 'Tortoise' | 'Amber' | 'Gold' | 'Silver' | 'Gunmetal' | 'Rose Gold';
 
 export interface Product {
   id: number;

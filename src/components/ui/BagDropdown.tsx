@@ -30,6 +30,7 @@ import { useClickOutside } from '../../hooks';
 import { CartItem, CartSummary, EmptyCart } from './cart';
 import { useCart } from '../../contexts/CartContext';
 import { useDropdown } from '../../contexts/DropdownContext';
+import { useToast } from './Toast';
 
 /**
  * Props for the BagDropdown component
@@ -50,6 +51,7 @@ export const BagDropdown: React.FC<BagDropdownProps> = ({ className = '' }) => {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const { items, removeFromCart, totalItems, totalPrice } = useCart();
   const { setActiveDropdown, isDropdownActive } = useDropdown();
+  const { showToast } = useToast();
   const dropdownId = 'bag-dropdown';
 
   // Sync with global dropdown state
@@ -79,6 +81,7 @@ export const BagDropdown: React.FC<BagDropdownProps> = ({ className = '' }) => {
    */
   const handleRemoveItem = (productId: number, color: string, size: string) => {
     removeFromCart(productId, color, size);
+    showToast({ type: 'info', message: 'Removed from bag', description: `${size} · ${color}` });
   };
 
   /**

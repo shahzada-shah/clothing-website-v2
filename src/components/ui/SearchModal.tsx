@@ -49,13 +49,13 @@ interface SearchModalProps {
  * Popular search terms to display
  * These could be fetched from an API in a real application
  */
-const POPULAR_SEARCHES = ['T-Shirts', 'Pants', 'Long Sleeves', 'Accessories'];
+const POPULAR_SEARCHES = ['Handcrafted Glasses', 'Sunglasses', 'Aviators', 'Accessories'];
 
 /**
  * Trending items to display
  * These could be dynamically loaded based on user behavior
  */
-const TRENDING_ITEMS = ['New Arrivals Collection', 'Summer Essentials', 'Everyday Wear'];
+const TRENDING_ITEMS = ['New Arrivals Collection', 'Heritage Collection', 'Premium Collection'];
 
 /**
  * SearchModal Component
@@ -155,9 +155,9 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
           <input
             ref={inputRef}
             type="text"
-            placeholder="Search for products..."
+            placeholder="Search for eyewear..."
             className="flex-1 text-lg outline-none text-gray-900 placeholder-gray-400"
-            aria-label="Search for products"
+            aria-label="Search for eyewear"
             id="search-modal-title"
           />
           <button

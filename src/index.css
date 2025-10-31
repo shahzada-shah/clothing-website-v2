@@ -5,6 +5,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
   body {
@@ -13,6 +15,9 @@
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
   }
 }
 
@@ -265,24 +270,26 @@
   }
 }
 
-/* Custom Scrollbar Styling */
+/* Custom Scrollbar Styling - Hide scrollbars but keep scrolling functionality */
 @layer utilities {
-  ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+  /* Hide scrollbars for all browsers */
+  html {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
   }
 
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  html::-webkit-scrollbar {
+    display: none;
   }
 
-  ::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 5px;
+  body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
   }
 
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+  body::-webkit-scrollbar {
+    display: none;
   }
 }
 

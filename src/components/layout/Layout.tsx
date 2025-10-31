@@ -33,9 +33,9 @@ import { ScrollToTop } from '../ui';
  */
 export const Layout: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white w-full">
       <Header />
-      <main>
+      <main className="w-full">
         <Outlet />
       </main>
       <Footer />

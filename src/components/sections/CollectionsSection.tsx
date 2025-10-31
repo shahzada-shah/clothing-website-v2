@@ -1,7 +1,7 @@
 /**
  * CollectionsSection Component
  *
- * Displays Women and Men collection cards in a split layout.
+ * Displays Heritage and Premium collection cards in a split layout.
  * Features hover effects, overlay content, and CTA buttons.
  *
  * @example
@@ -9,7 +9,6 @@
  */
 
 import React from 'react';
-import { Image } from 'lucide-react';
 import { FadeInSection } from '../ui';
 
 interface Collection {
@@ -17,20 +16,23 @@ interface Collection {
   title: string;
   buttonText: string;
   link: string;
+  image: string;
 }
 
 const collections: Collection[] = [
   {
-    id: 'women',
-    title: 'Women Collection',
+    id: 'heritage',
+    title: 'Heritage Collection',
     buttonText: 'See Variant',
-    link: '#women',
+    link: '/men',
+    image: '/images/ad_01.png',
   },
   {
-    id: 'men',
-    title: 'Men Collection',
+    id: 'premium',
+    title: 'Premium Collection',
     buttonText: 'See Variant',
-    link: '#men',
+    link: '/women',
+    image: '/images/ad_02.png',
   },
 ];
 
@@ -49,21 +51,18 @@ export const CollectionsSection: React.FC = () => {
                 href={collection.link}
                 className="group relative block overflow-hidden bg-gray-100 aspect-[4/5] cursor-pointer"
               >
-                {/* Background Image Placeholder */}
-                <div className="absolute inset-0 flex items-center justify-center transition-transform duration-700 group-hover:scale-105">
-                  <div className="flex flex-col items-center justify-center">
-                    <Image
-                      className="w-20 h-20 text-gray-300"
-                      strokeWidth={1.5}
-                    />
-                    <p className="text-gray-400 text-xs mt-3 font-medium tracking-wide">
-                      {collection.id.toUpperCase()} MODEL
-                    </p>
-                  </div>
-                </div>
+                {/* Background Image */}
+                <img
+                  src={collection.image}
+                  alt={collection.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
 
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-opacity duration-500" />
+                
                 {/* Overlay Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
 
                 {/* Content Overlay */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center z-10">

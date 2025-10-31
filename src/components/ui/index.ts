@@ -29,3 +29,4 @@ export { BagDropdown } from './BagDropdown';
 export { AccountDropdown } from './AccountDropdown';
 export { CustomSelect } from './CustomSelect';
 export { MultiSelect } from './MultiSelect';
+export { ToastProvider, useToast } from './Toast';

@@ -22,13 +22,14 @@ interface FooterColumn {
 
 const footerData: FooterColumn[] = [
   {
-    title: 'CATEGORIES',
+    title: 'COLLECTIONS',
     links: [
-      { label: 'MAN', href: '#man' },
-      { label: 'WOMAN', href: '#woman' },
-      { label: 'T-SHIRTS', href: '#tshirts' },
-      { label: 'PANTS', href: '#pants' },
-      { label: 'LONG SLEEVES', href: '#long-sleeves' },
+      { label: 'HANDCRAFTED GLASSES', href: '/' },
+      { label: 'SUNGLASSES', href: '/' },
+      { label: 'ACCESSORIES', href: '/' },
+      { label: 'NEW ARRIVALS', href: '/' },
+      { label: 'HERITAGE COLLECTION', href: '/men' },
+      { label: 'PREMIUM COLLECTION', href: '/women' },
     ],
   },
   {
@@ -111,10 +112,10 @@ export const Footer: React.FC = () => {
         <div className="mt-16 pt-8 border-t border-gray-200">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-gray-500 text-xs">
-              © {new Date().getFullYear()} KAZWEAR. All rights reserved.
+              © {new Date().getFullYear()} KAZWEAR All rights reserved.
             </p>
             <p className="text-gray-500 text-xs">
-              Designed with care for everyday style
+              Handcrafted with precision for timeless vision
             </p>
           </div>
         </div>

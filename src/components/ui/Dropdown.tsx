@@ -73,11 +73,11 @@ export const Dropdown: React.FC<DropdownProps> = ({
   return (
     <div
       ref={dropdownRef}
-      className={`relative ${className}`}
+      className={`relative inline-block ${className}`}
       onMouseEnter={() => setIsOpen(true)}
     >
       <button
-        className="flex items-center gap-1 text-gray-700 hover:text-gray-900 transition-colors duration-200 font-medium"
+        className="flex items-center gap-1 text-sm font-medium text-gray-900 hover:text-gray-600 transition-colors duration-200"
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
@@ -90,14 +90,14 @@ export const Dropdown: React.FC<DropdownProps> = ({
       </button>
 
       {isOpen && (
-        <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden animate-fadeInDown z-50">
-          <div className="py-2">
+        <div className="absolute top-full left-0 mt-2 min-w-[220px] w-max bg-white border border-gray-200 rounded-lg shadow-xl overflow-auto max-h-[70vh] animate-fadeInDown z-[200]">
+          <div className="py-1">
             {items.map((item, index) => (
               item.href.startsWith('/') ? (
                 <Link
                   key={index}
                   to={item.href}
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors duration-150"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors duration-150 whitespace-nowrap"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
@@ -106,7 +106,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
                 <a
                   key={index}
                   href={item.href}
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors duration-150"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors duration-150 whitespace-nowrap"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}

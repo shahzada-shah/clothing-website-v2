@@ -9,7 +9,6 @@
  */
 
 import React, { useState, FormEvent } from 'react';
-import { Image } from 'lucide-react';
 import { FadeInSection } from '../ui';
 
 export const NewsletterSection: React.FC = () => {
@@ -48,19 +47,16 @@ export const NewsletterSection: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2">
         {/* Left Side - Image */}
         <FadeInSection direction="right">
-          <div className="relative bg-gray-100 aspect-square lg:aspect-auto lg:min-h-[600px] flex items-center justify-center overflow-hidden group">
-            {/* Image Placeholder */}
-            <div className="absolute inset-0 flex items-center justify-center transition-transform duration-700 group-hover:scale-105">
-              <div className="flex flex-col items-center justify-center">
-                <Image
-                  className="w-24 h-24 text-gray-300"
-                  strokeWidth={1.5}
-                />
-                <p className="text-gray-400 text-xs mt-3 font-medium tracking-wide">
-                  LIFESTYLE IMAGE
-                </p>
-              </div>
-            </div>
+          <div className="relative bg-gray-100 overflow-hidden group">
+            {/* Lifestyle Image */}
+            <img
+              src="/images/ad_03.png"
+              alt="Lifestyle"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            
+            {/* Top and Bottom Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/30 pointer-events-none" />
           </div>
         </FadeInSection>
 
@@ -70,12 +66,12 @@ export const NewsletterSection: React.FC = () => {
             <div className="max-w-lg w-full">
               {/* Heading */}
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-gray-900 mb-6 tracking-tight leading-tight">
-                THE FIRST ROUND'S ON US
+                A NEW VISION AWAITS
               </h2>
 
               {/* Description */}
               <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-8">
-                Be the first to experience new collections, exclusive offers, and the stories behind our designs. Because at KAZWEAR, every new step begins with you.
+                Be among the first to discover our latest handcrafted collections, receive exclusive offers, and explore the artistry behind each meticulously crafted frame. At KAZWEAR, every piece is designed to see the world differently.
               </p>
 
               {/* Subscription Form */}

@@ -1,17 +1,19 @@
-# ANYWEAR E-Commerce Website
+# KAZWEAR — Handcrafted Eyewear Store
 
-A modern, professional e-commerce website built with React, TypeScript, and Tailwind CSS. Features smooth animations, responsive design, and a polished user experience.
+A premium eyewear storefront built with React, TypeScript, and Tailwind CSS. The experience centers on handcrafted frames, refined typography, and polished interactions.
 
 ## 🚀 Features
 
 - **Modern UI/UX**: Clean, professional design with smooth animations
 - **Page Loader**: Blur-in animation effect on initial page load
 - **Smooth Scrolling**: Native smooth scroll with scroll-to-top button
-- **Dropdown Navigation**: Hover-triggered dropdown menus in header
+- **Dropdown Navigation**: Hover-triggered dropdown menus in header (stable z-index / overflow)
 - **Responsive Design**: Mobile-first design that works on all devices
 - **Intersection Observers**: Animations triggered when elements enter viewport
 - **Custom Scrollbar**: Styled scrollbar for better visual consistency
 - **Accessibility**: Proper focus states and keyboard navigation
+- **Elegant Toasts**: Bottom‑right toasts for Add to Bag, Remove from Bag, Buy Now
+- **Edge‑Aware Hero**: Blur and darken applied only to far left/right edges; face stays sharp
 
 ## 📁 Project Structure
 
@@ -61,7 +63,7 @@ src/
 
 #### Header (`components/layout/Header.tsx`)
 - Sticky navigation with scroll effects
-- Dropdown menus for Shop category
+- Eyewear categories (Handcrafted Glasses, Sunglasses, Accessories)
 - Mobile hamburger menu
 - Smooth animations and transitions
 
@@ -90,6 +92,16 @@ src/
 - Click outside to close
 - Smooth fade and slide animations
 - Keyboard accessible
+
+#### Toasts (`components/ui/Toast.tsx`)
+- Headless provider + hook (`useToast`)
+- Bottom‑right stack, auto dismiss, elegant fade
+- Example:
+
+```tsx
+const { showToast } = useToast();
+showToast({ type: 'success', message: 'Added to bag', description: 'Classic Round · 52mm · Charcoal' });
+```
 
 #### FadeInSection (`components/ui/FadeInSection.tsx`)
 - Wrapper for fade-in on scroll
@@ -159,6 +171,19 @@ Styled scrollbar with:
 - Gray track (#f1f1f1)
 - Darker thumb (#888)
 - Hover effect (#555)
+
+## 🖼️ Image Guidelines (Ideogram‑friendly)
+
+All images live under `public/images`. Recommended sizes:
+
+- Product Cards (grid): 3:4 portrait — 900×1200 (or 750×1000)
+- Product Detail – Main: 4:5 portrait — 960×1200 (or 800×1000)
+- Detail Section (3‑up): 4:3 landscape — 1400×1050 (or 1200×900)
+- Collections (2 cards): 4:5 portrait — 1200×1500
+- Hero: 16:9 landscape — 1920×1080 with center‑safe subject (edge blur/darken applied)
+- Newsletter: 1:1 square — 1000×1000
+
+Use PNG or WebP; aim for ~200–400 KB per asset.
 
 ## 🛠️ Development
 

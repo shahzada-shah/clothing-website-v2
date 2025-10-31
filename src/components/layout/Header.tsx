@@ -30,12 +30,9 @@ import { useScrollEffect } from '../../hooks';
 import { Dropdown, SearchModal, BagDropdown, AccountDropdown } from '../ui';
 
 const shopDropdownItems = [
-  { label: 'Men', href: '/men' },
-  { label: 'Women', href: '/women' },
-  { label: 'T-Shirts', href: '#tshirts' },
-  { label: 'Pants', href: '#pants' },
-  { label: 'Long Sleeves', href: '#long-sleeves' },
-  { label: 'Accessories', href: '#accessories' },
+  { label: 'Handcrafted Glasses', href: '/' },
+  { label: 'Sunglasses', href: '/' },
+  { label: 'Accessories', href: '/' },
 ];
 
 export const Header: React.FC = () => {
@@ -47,11 +44,11 @@ export const Header: React.FC = () => {
     <>
       <SearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
       <header
-        className={`bg-white border-b border-gray-200 sticky top-0 z-50 transition-all duration-300 ${
+        className={`bg-white border-b border-gray-200 sticky top-0 z-[200] transition-all duration-300 ${
           isScrolled ? 'shadow-md' : 'shadow-none'
         }`}
       >
-      <div className="max-w-[1400px] mx-auto px-6 py-4">
+      <div className="max-w-[1400px] mx-auto px-6 py-4 relative">
         <div className="grid grid-cols-3 items-center">
           {/* Primary Navigation - Desktop */}
           <nav className="hidden lg:flex items-center gap-8 justify-start">

@@ -29,25 +29,45 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     >
       {/* Image Container */}
       <div className="relative bg-gray-100 aspect-[3/4] mb-4 overflow-hidden">
-        {/* Wireframe Placeholder */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="flex flex-col items-center justify-center">
-            <Image
-              className={`w-16 h-16 text-gray-300 transition-all duration-500 ${
-                isHovered ? 'scale-110 text-gray-400' : 'scale-100'
+        {product.image && product.image !== 'placeholder' ? (
+          <>
+            {/* Product Image */}
+            <img
+              src={product.image}
+              alt={product.name}
+              className={`w-full h-full object-contain transition-transform duration-500 ${
+                isHovered ? 'scale-105' : 'scale-100'
               }`}
-              strokeWidth={1.5}
             />
-            <p className="text-gray-400 text-xs mt-2 font-medium">PRODUCT IMAGE</p>
-          </div>
-        </div>
-
-        {/* Hover Overlay */}
-        <div
-          className={`absolute inset-0 bg-black/5 transition-opacity duration-300 ${
-            isHovered ? 'opacity-100' : 'opacity-0'
-          }`}
-        />
+            {/* Hover Overlay */}
+            <div
+              className={`absolute inset-0 bg-black/5 transition-opacity duration-300 ${
+                isHovered ? 'opacity-100' : 'opacity-0'
+              }`}
+            />
+          </>
+        ) : (
+          <>
+            {/* Wireframe Placeholder */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="flex flex-col items-center justify-center">
+                <Image
+                  className={`w-16 h-16 text-gray-300 transition-all duration-500 ${
+                    isHovered ? 'scale-110 text-gray-400' : 'scale-100'
+                  }`}
+                  strokeWidth={1.5}
+                />
+                <p className="text-gray-400 text-xs mt-2 font-medium">PRODUCT IMAGE</p>
+              </div>
+            </div>
+            {/* Hover Overlay */}
+            <div
+              className={`absolute inset-0 bg-black/5 transition-opacity duration-300 ${
+                isHovered ? 'opacity-100' : 'opacity-0'
+              }`}
+            />
+          </>
+        )}
       </div>
 
       {/* Product Info */}

@@ -9,19 +9,22 @@
  */
 
 import React, { useState, useMemo } from 'react';
-import { Image } from 'lucide-react';
 import { FadeInSection } from '../ui';
-import { EVERYDAY_WEAR, CATEGORY_FILTERS } from '../../constants/products';
+import { ProductCard } from '../products/ProductCard';
+import { EVERYDAY_WEAR, CATEGORY_FILTERS, NEW_ARRIVALS } from '../../constants/products';
 import { ProductCategory } from '../../types/product';
 
 export const EverydayWear: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState<ProductCategory | 'all'>('Jacket');
+  const [activeCategory, setActiveCategory] = useState<ProductCategory | 'all'>('Eyewear');
 
   const filteredProducts = useMemo(() => {
+    // Combine EVERYDAY_WEAR and NEW_ARRIVALS for filtering
+    const allProducts = [...EVERYDAY_WEAR, ...NEW_ARRIVALS];
+    
     if (activeCategory === 'all') {
-      return EVERYDAY_WEAR;
+      return allProducts;
     }
-    return EVERYDAY_WEAR.filter(product => product.category === activeCategory);
+    return allProducts.filter(product => product.category === activeCategory);
   }, [activeCategory]);
 
   return (
@@ -93,39 +96,7 @@ export const EverydayWear: React.FC = () => {
                   delay={400 + index * 100}
                   direction="up"
                 >
-                  <div className="group cursor-pointer">
-                    {/* Image Container */}
-                    <div className="relative bg-gray-100 aspect-[3/4] mb-4 overflow-hidden">
-                      {/* Wireframe Placeholder */}
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="flex flex-col items-center justify-center">
-                          <Image
-                            className="w-16 h-16 text-gray-300 transition-all duration-500 group-hover:scale-110 group-hover:text-gray-400"
-                            strokeWidth={1.5}
-                          />
-                          <p className="text-gray-400 text-xs mt-2 font-medium">
-                            PRODUCT IMAGE
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Hover Overlay */}
-                      <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </div>
-
-                    {/* Product Info */}
-                    <div className="space-y-1">
-                      <h3 className="text-sm font-normal text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
-                        {product.name}
-                      </h3>
-                      <p className="text-xs text-gray-500">
-                        {product.colors} Color{product.colors > 1 ? 's' : ''} available
-                      </p>
-                      <p className="text-sm font-medium text-gray-900">
-                        ${product.price.toFixed(2)}
-                      </p>
-                    </div>
-                  </div>
+                  <ProductCard product={product} />
                 </FadeInSection>
               ))}
             </div>
