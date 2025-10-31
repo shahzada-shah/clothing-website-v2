@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   // IMPORTANT: set base when deploying to GitHub Pages under a subpath
   // e.g., https://<user>.github.io/<repo>/
-  base: '/KAZWEAR/',
+  base: '/kazwear/',
   plugins: [react()],
   optimizeDeps: {
     exclude: ['lucide-react'],
