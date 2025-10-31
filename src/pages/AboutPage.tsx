@@ -8,6 +8,7 @@
  */
 
 import React from 'react';
+import { publicUrl } from '../utils/paths';
 import { useNavigate } from 'react-router-dom';
 import { FadeInSection } from '../components/ui';
 import { ArrowRight, Minus } from 'lucide-react';
@@ -115,7 +116,7 @@ export const AboutPage: React.FC = () => {
             <div className="space-y-8">
               <div className="aspect-[4/5] bg-stone-50 rounded-sm relative overflow-hidden group">
                 <img
-                  src="/images/showcase_01.png"
+                  src={publicUrl('images/showcase_01.png')}
                   alt="Eyewear Craftsmanship"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -123,7 +124,7 @@ export const AboutPage: React.FC = () => {
               <div className="flex gap-4">
                 <div className="flex-1 aspect-square bg-stone-50 rounded-sm relative overflow-hidden group">
                   <img
-                    src="/images/showcase_02.png"
+                    src={publicUrl('images/showcase_02.png')}
                     alt="Design details"
                     loading="lazy"
                     decoding="async"
@@ -132,7 +133,7 @@ export const AboutPage: React.FC = () => {
                 </div>
                 <div className="flex-1 aspect-square bg-stone-50 rounded-sm relative overflow-hidden group">
                   <img
-                    src="/images/showcase_03.png"
+                    src={publicUrl('images/showcase_03.png')}
                     alt="Material finishing"
                     loading="lazy"
                     decoding="async"

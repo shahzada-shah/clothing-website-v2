@@ -59,7 +59,7 @@ const App: React.FC = () => {
               transitionProperty: 'filter',
             }}
           >
-            <BrowserRouter>
+            <BrowserRouter basename={import.meta.env.BASE_URL}>
               <ScrollToTopOnMount />
               <Routes>
                 <Route path="/" element={<Layout />}>

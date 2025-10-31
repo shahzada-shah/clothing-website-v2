@@ -32,8 +32,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         {product.image && product.image !== 'placeholder' ? (
           <>
             {/* Product Image */}
-            <img
-              src={product.image}
+              <img
+                src={product.image}
               alt={product.name}
               className={`w-full h-full object-contain transition-transform duration-500 ${
                 isHovered ? 'scale-105' : 'scale-100'

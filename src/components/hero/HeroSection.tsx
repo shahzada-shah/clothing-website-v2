@@ -12,6 +12,7 @@
  */
 
 import React from 'react';
+import { publicUrl } from '../../utils/paths';
 import { HERO_CONTENT } from '../../constants/content';
 
 export const HeroSection: React.FC = () => {
@@ -26,8 +27,8 @@ export const HeroSection: React.FC = () => {
     <section className="relative w-full h-[calc(100vh-73px)] min-h-[600px] overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img
-          src="/images/hero_img.png"
+                <img
+                  src={publicUrl('images/hero_img.png')}
           alt="Hero Background"
           className="w-full h-full object-cover"
         />
@@ -40,8 +41,8 @@ export const HeroSection: React.FC = () => {
             WebkitMaskImage: 'linear-gradient(to right, black 0%, black 15%, transparent 25%, transparent 75%, black 85%, black 100%)',
           }}
         >
-          <img
-            src="/images/hero_img.png"
+                  <img
+                    src={publicUrl('images/hero_img.png')}
             alt=""
             className="w-full h-full object-cover blur-md"
           />

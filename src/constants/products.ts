@@ -6,13 +6,14 @@
  */
 
 import { Product, CategoryFilter } from '../types/product';
+import { publicUrl } from '../utils/paths';
 
 export const NEW_ARRIVALS: Product[] = [
   {
     id: 1,
     name: 'Classic Round Two-Tone',
     price: 485.00,
-    image: '/images/product_01.png',
+            image: publicUrl('images/product_01.png'),
     colors: 7,
     category: 'Eyewear',
     collection: 'Heritage',
@@ -31,7 +32,7 @@ export const NEW_ARRIVALS: Product[] = [
     id: 2,
     name: 'Octagonal Blue Acetate',
     price: 525.00,
-    image: '/images/product_02.png',
+            image: publicUrl('images/product_02.png'),
     colors: 2,
     category: 'Eyewear',
     collection: 'Premium',
@@ -49,7 +50,7 @@ export const NEW_ARRIVALS: Product[] = [
     id: 3,
     name: 'Aviator Heritage Gold',
     price: 595.00,
-    image: '/images/product_03.png',
+            image: publicUrl('images/product_03.png'),
     colors: 3,
     category: 'Eyewear',
     collection: 'Heritage',
@@ -67,7 +68,7 @@ export const NEW_ARRIVALS: Product[] = [
     id: 4,
     name: 'Double Bridge Aviator',
     price: 650.00,
-    image: '/images/product_04.png',
+            image: publicUrl('images/product_04.png'),
     colors: 2,
     category: 'Eyewear',
     collection: 'Premium',
@@ -88,7 +89,7 @@ export const EVERYDAY_WEAR: Product[] = [
     id: 5,
     name: 'Classic Aviator Sunglasses',
     price: 425.00,
-    image: '/images/product_05.png',
+            image: publicUrl('images/product_05.png'),
     colors: 3,
     category: 'Sunglasses',
     collection: 'Heritage',
@@ -106,7 +107,7 @@ export const EVERYDAY_WEAR: Product[] = [
     id: 6,
     name: 'Round Frame Sunglasses',
     price: 485.00,
-    image: '/images/product_06.png',
+            image: publicUrl('images/product_06.png'),
     colors: 2,
     category: 'Sunglasses',
     collection: 'Premium',
@@ -124,7 +125,7 @@ export const EVERYDAY_WEAR: Product[] = [
     id: 7,
     name: 'Cat-Eye Sunglasses',
     price: 455.00,
-    image: '/images/product_07.png',
+            image: publicUrl('images/product_07.png'),
     colors: 4,
     category: 'Sunglasses',
     collection: 'Essential',

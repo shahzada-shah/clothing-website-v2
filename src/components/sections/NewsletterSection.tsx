@@ -9,6 +9,7 @@
  */
 
 import React, { useState, FormEvent } from 'react';
+import { publicUrl } from '../../utils/paths';
 import { FadeInSection } from '../ui';
 
 export const NewsletterSection: React.FC = () => {
@@ -49,8 +50,8 @@ export const NewsletterSection: React.FC = () => {
         <FadeInSection direction="right">
           <div className="relative bg-gray-100 overflow-hidden group">
             {/* Lifestyle Image */}
-            <img
-              src="/images/ad_03.png"
+                    <img
+                      src={publicUrl('images/ad_03.png')}
               alt="Lifestyle"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />

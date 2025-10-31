@@ -9,16 +9,17 @@
  */
 
 import React from 'react';
+import { publicUrl } from '../../utils/paths';
 import { Image } from 'lucide-react';
 import { FadeInSection } from '../ui';
 import { BRAND_NAME } from '../../constants/content';
 
 export const DetailsSection: React.FC = () => {
-  const images = [
-    { id: 1, label: 'CRAFTSMANSHIP', aspectRatio: '4/3', image: '/images/hand_craft_01.png' },
-    { id: 2, label: 'PRECISION DETAIL', aspectRatio: '4/3', image: '/images/hand_craft_02.png' },
-    { id: 3, label: 'ARTISAN WORK', aspectRatio: '4/3', image: '/images/hand_craft_03.png' },
-  ];
+          const images = [
+            { id: 1, label: 'CRAFTSMANSHIP', aspectRatio: '4/3', image: publicUrl('images/hand_craft_01.png') },
+            { id: 2, label: 'PRECISION DETAIL', aspectRatio: '4/3', image: publicUrl('images/hand_craft_02.png') },
+            { id: 3, label: 'ARTISAN WORK', aspectRatio: '4/3', image: publicUrl('images/hand_craft_03.png') },
+          ];
 
   return (
     <section className="w-full bg-white py-16 px-6">

@@ -9,6 +9,7 @@
  */
 
 import React from 'react';
+import { publicUrl } from '../../utils/paths';
 import { FadeInSection } from '../ui';
 
 interface Collection {
@@ -25,14 +26,14 @@ const collections: Collection[] = [
     title: 'Heritage Collection',
     buttonText: 'See Variant',
     link: '/men',
-    image: '/images/ad_01.png',
+            image: publicUrl('images/ad_01.png'),
   },
   {
     id: 'premium',
     title: 'Premium Collection',
     buttonText: 'See Variant',
     link: '/women',
-    image: '/images/ad_02.png',
+            image: publicUrl('images/ad_02.png'),
   },
 ];
 
